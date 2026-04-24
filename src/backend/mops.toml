@@ -1,0 +1,9 @@
+[package]
+name = "backend"
+version = "0.1.0"
+
+[dependencies]
+core = "https://github.com/dfinity/motoko/releases/download/0.14.7/base.tar.gz"
+
+[canisters.backend]
+main = "main.mo"

@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --font-display: "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* Ocean Breeze Palette */
+    /* Primary: Dark Navy #03045E */
+    --primary: 0.215 0.112 254;
+    --primary-foreground: 0.97 0.01 290;
+
+    /* Secondary: Medium Blue #0077B6 */
+    --secondary: 0.454 0.154 257;
+    --secondary-foreground: 0.97 0.01 290;
+
+    /* Accent: Cyan #00B4D8 */
+    --accent: 0.612 0.149 262;
+    --accent-foreground: 0.18 0.03 254;
+
+    /* Background: Pale Cyan #CAF0F8 */
+    --background: 0.945 0.048 262;
+    --foreground: 0.15 0.08 254;
+
+    /* Muted: Light Blue #90E0EF */
+    --muted: 0.865 0.078 262;
+    --muted-foreground: 0.35 0.06 254;
+
+    --card: 0.97 0.025 262;
+    --card-foreground: 0.15 0.08 254;
+
+    --popover: 0.97 0.01 290;
+    --popover-foreground: 0.15 0.08 254;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.97 0.01 290;
+
+    --border: 0.88 0.065 262;
+    --input: 0.945 0.048 262;
+    --ring: 0.612 0.149 262;
+
+    --chart-1: 0.612 0.149 262;
+    --chart-2: 0.454 0.154 257;
+    --chart-3: 0.215 0.112 254;
+    --chart-4: 0.865 0.078 262;
+    --chart-5: 0.745 0.11 260;
+
+    --sidebar: 0.215 0.112 254;
+    --sidebar-foreground: 0.97 0.01 290;
+    --sidebar-primary: 0.612 0.149 262;
+    --sidebar-primary-foreground: 0.215 0.112 254;
+    --sidebar-accent: 0.454 0.154 257;
+    --sidebar-accent-foreground: 0.97 0.01 290;
+    --sidebar-border: 0.3 0.09 254;
+    --sidebar-ring: 0.612 0.149 262;
+
+    /* Named Ocean Breeze tokens */
+    --ocean-navy: 0.215 0.112 254;
+    --ocean-blue: 0.454 0.154 257;
+    --ocean-cyan: 0.612 0.149 262;
+    --ocean-light-blue: 0.865 0.078 262;
+    --ocean-pale-cyan: 0.945 0.048 262;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .bg-ocean-navy {
+    background-color: #03045e;
+  }
+  .bg-ocean-blue {
+    background-color: #0077b6;
+  }
+  .bg-ocean-cyan {
+    background-color: #00b4d8;
+  }
+  .bg-ocean-light-blue {
+    background-color: #90e0ef;
+  }
+  .bg-ocean-pale-cyan {
+    background-color: #caf0f8;
+  }
+
+  .text-ocean-navy {
+    color: #03045e;
+  }
+  .text-ocean-blue {
+    color: #0077b6;
+  }
+  .text-ocean-cyan {
+    color: #00b4d8;
+  }
+
+  .border-ocean-navy {
+    border-color: #03045e;
+  }
+  .border-ocean-blue {
+    border-color: #0077b6;
+  }
+  .border-ocean-cyan {
+    border-color: #00b4d8;
+  }
+
+  /* Glassmorphism cards */
+  .glass-pale {
+    background: rgba(202, 240, 248, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    box-shadow: 0 8px 32px rgba(3, 4, 94, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(3, 4, 94, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 180, 216, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Hero animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-hero-name {
+  animation: fadeSlideUp 0.7s ease-out 0.1s both;
+}
+.animate-hero-title {
+  animation: fadeSlideUp 0.7s ease-out 0.3s both;
+}
+.animate-hero-sub {
+  animation: fadeSlideUp 0.7s ease-out 0.45s both;
+}
+.animate-hero-contact {
+  animation: fadeSlideUp 0.7s ease-out 0.55s both;
+}
+.animate-hero-ctas {
+  animation: fadeSlideUp 0.7s ease-out 0.7s both;
+}
+.animate-hero-avatar {
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+/* Scroll reveal */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(3, 4, 94, 0.15);
+}

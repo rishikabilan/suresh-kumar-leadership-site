@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "mopsTomlDepsHash": "53090e31441a3d4c6d484e041f036efa1a5243634c5c6a935ea09941076b0a68",
+  "deps": {
+    "core": "https://github.com/dfinity/motoko/releases/download/0.14.7/base.tar.gz"
+  },
+  "hashes": {}
+}
