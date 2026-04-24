@@ -570,7 +570,7 @@ function HeroSection() {
           <div className="animate-hero-avatar lg:col-span-2 flex justify-center">
             <div className="relative">
               <div
-                className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4"
+                className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-2xl overflow-hidden border-4"
                 style={{
                   borderColor: "#00B4D8",
                   boxShadow:
@@ -583,11 +583,6 @@ function HeroSection() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              <div
-                className="absolute -inset-3 rounded-full border-2 opacity-30"
-                style={{ borderColor: "#90E0EF" }}
-                aria-hidden="true"
-              />
             </div>
           </div>
 
